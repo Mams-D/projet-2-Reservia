@@ -1,0 +1,462 @@
+
+    
+body {
+    max-width: 1500px;
+    margin: auto;
+    font-family: 'Raleway', Georgia, serif, sans-serif;
+}
+.fas {
+    color: #0065FC;
+}
+
+/*  HEADER   */
+header {
+    display: flex;
+    height: 70px;
+    margin: 20px;
+}
+
+header a {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    margin-left: 2em;  
+}
+header a:hover {
+    border-top: 4px solid #0065FC;
+    color: #0065FC;
+}
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    height: 100%;
+    align-items: center; 
+}
+#logoReservia {
+    display: flex;
+    align-items: center;
+}
+#logoReservia img{
+    width: 80px;
+}
+@media (max-width: 600px) {
+    header {
+        height: auto;
+        display: grid;
+        grid-template-rows: 50px 50px;
+        grid-template-columns: auto 1fr auto;
+        grid-template-areas: 
+        "logo . register"
+        " navbar navbar navbar";
+    }
+    #logoReservia {
+        grid-area: logo;
+    }
+    nav {
+        grid-area: navbar;
+        border-bottom: 3px #F2F2F2 solid;
+    }
+    nav a {
+        width: 50%;
+        justify-content: center;
+    }
+    nav a:hover {
+        border-bottom: 4px solid #0065FC;
+        color: #0065FC;
+        border-top: none ;
+    }
+    .register {
+        grid-area: register;
+    }
+}
+
+    /* SECTION MAIN  */
+/* SEARCH CITY  */
+.searchAndFilter {
+    margin: 20px;
+}
+
+.searchCity {
+    display: flex;
+}
+
+/* Style le icon search */
+.fa-map-marker-alt{
+    color: black;
+}
+
+.iconSearch {
+    display: flex;
+    background-color: #F2F2F2;
+    border-radius: 10px 0 0 10px;
+    width: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Style le input search */
+#search::placeholder {
+    color: black;
+    font-weight: 800;
+    padding-left: 10px;
+}
+.searchCity input {
+    width: 150px;
+    border: 1px solid  #F2F2F2;
+}
+/* Style le boutton search  */
+#btnSearch {
+    height: 45px;
+    background-color: #0065FC;
+    border: none;
+    color: white;
+}
+@media(min-width:800px){
+    .fa-search {
+        display: none;
+    }
+    #btnSearch {
+        border-radius: 0 10px 10px 0;
+    }
+}
+@media(max-width:800px){
+    .fa-search {
+        color: white;
+        padding: 5px;
+    }
+    #search {
+        height: 45px;
+        border-radius: 0 12px 12px 0;
+        width: 90%;
+    }
+    #btnSearch {
+        border-radius: 10px 10px 10px 10px;
+        position: absolute;
+        height: 49px;
+        right: 0;
+        padding: 10px;
+        margin-right: 20px;
+    }
+    #btnSearch span{
+        display: none;
+    }
+}
+
+/* --- FILTER --- */
+.filterBlock {
+    margin-bottom: 20px;;
+}
+.filters {
+    margin: 16px 0 16px 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.filters h4{
+    margin-right: 30px;
+}
+@media(max-width:800px) {
+    .filters h4 {
+        width: 100%;
+    }
+}
+.filter {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-right: 10px;
+    border-radius: 100px;
+}
+.titleFilter {
+    margin-right: 15px;
+    border: 1px solid  #F2F2F2;
+    padding: 19px 19px 19px 60px;
+    border-radius: 50px;
+    margin-left: 10px;
+}
+/*Effet de grossissement quant on passe la souris*/
+.filter:hover {
+    transform:scale(1.25);
+}
+.iconeFas {
+    position: absolute;
+    background-color: #DEEBFF;
+    padding: 20px;
+    border-radius: 100%;
+}
+#iconeChild i {
+    display: flex;
+}
+.fa-child {
+    width: 20px;
+    height: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Style info */
+.info {
+    display: flex;
+    align-items: center;
+    grid-gap:10px;
+}
+.info i {
+    border: 2px solid #F2F2F2;
+    display: flex;
+    border-radius: 100%;
+}
+.fa-info {
+    width: 30px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+}
+/*   SECTION ACCOMMODATIONS */
+
+#city {
+    background-color: #F2F2F2;
+}
+.accommodations {   
+    display: flex;
+    justify-content: space-between;
+}
+/*Mise en page des 2 blocs : city et morePopular*/
+.container {
+    background-color: #F2F2F2;
+    padding: 0 20px 20px 20px;
+}
+
+/*Style des liens*/
+a{
+    text-decoration: none;
+    color: black;
+}
+/*style des icons étoiles*/
+.stella .stellaGrey {
+    color:#F2F2F2;
+}
+.stella {
+    padding: 0 0 10px 10px;
+}
+@media (min-width: 1300px) {
+    #city {
+        width: 64%;
+        padding: 0 30px 0 30px;
+        margin-left: 20px;
+    }
+    .accommodationCity {
+        width: 250px;
+    }
+    #morePopular {
+        width: 24%;
+        border-radius: 12px;
+        margin-right: 20px;
+    }
+    .containerAccommodations {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .imgAcc {
+        height: 120px;
+    }
+}
+@media (max-width:1300px) {
+    .accommodations {
+        flex-wrap: wrap-reverse;
+    }
+    #city {
+        background-color: white;
+        display: grid;
+        width: 100%;
+        margin: 0 20px 0 20px;
+    }
+    .imgAcc {
+        height: 200px;
+    }
+}
+@media (max-width: 1300px ) and (min-width: 860px) {
+    #city {
+        display: grid;
+    }
+    .containerAccommodations {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 15px;
+    }
+    .accommodations h3 {
+        grid-column: 1/-1;
+    }
+    #morePopular {
+        display: grid;
+    }
+    .containerMorepopular {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 15px;
+    }
+}
+@media (max-width: 860px) {
+    .containerMorepopular {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .containerAccommodations {
+        display: grid;
+    }
+}
+
+/* --- CITY --- */
+#city {
+    border-radius: 12px;
+}
+/*style des cardes*/
+.accommodationCity {
+    border-radius: 12px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.16);
+    margin: 10px 0 10px 0;
+    padding: 4px;
+}
+
+.imgAcc img {
+    border-radius: 10px 10px 0 0;
+}
+.container img {
+    width: 100%;
+}
+.infoHebergement {
+    margin-left: 10px;
+}
+.infoHebergement h4 {
+    margin: 10px 0 3px 0;
+}
+.infoHebergement p {
+    margin: 6px 0 6px 0;
+}
+.infoMorepopular {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+  /*  MORE POPULAR */
+.contentAccommodationPopular {
+    max-width: 40%;
+}
+#morePopular h3 {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.fa-chart-line {
+    color: black;
+}
+#morePopular a {
+    margin: 15px 0 15px 0;
+}
+@media(min-width:1300px){
+    .containerMorepopular {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+.accommodationPopular {
+    display: flex;
+    height: 140px;
+    border-radius: 12px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.16);
+    padding: 6px;
+}
+.accommodationPopular img {
+    border-radius: 10px 0 0 10px;
+}
+.contentAccommodation img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.learnMore {
+    width: 100%;
+    grid-column: 1/-1;
+}
+.learnMore p{
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+/*  ACTIVITY */
+.activity {
+    display: grid;
+    grid-gap: 35px;
+    margin: 20px
+}
+.titleActivity {
+    grid-column: 1/-1;
+}
+.cardActivity {
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.16);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.imgActivity {
+    height: 100%;
+}
+.imgActivity img {
+    height: 100%; 
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+.cardActivity h4 {
+    margin-left: 30px;
+}
+@media (min-width: 1000px) {
+    .activity {
+        grid-template-columns: 1fr 1fr 1fr 1fr; 
+        grid-template-rows: 40px auto; 
+    }
+    #vieuxPort {
+        grid-row: 2/4;
+    }
+    #ilesFrioul {
+        grid-row: 2/4;
+        grid-column: 3/4;
+    }
+    #forPomegues .imgActivity {
+        height: 250px;
+    }
+}
+@media (max-width: 1000px) {
+    #forPomegues .imgActivity {
+        height: 200px;
+    }
+    .imgActivity {
+        height: 200px;
+    }
+}
+/*    FOOTER  */
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    padding: 20px 20px 20px 50px;
+    background-color: #F2F2F2;  
+}
+footer h3 {
+    font-weight: 600;
+}
+footer div {
+    width: 30%;
+}
+@media(max-width: 600px) {
+    footer div{
+        width: 100%;
+    }
+}
+ 
